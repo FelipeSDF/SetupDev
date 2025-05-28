@@ -1,0 +1,128 @@
+/* Container geral que centraliza tudo */
+.containerPageRegister {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+    background-image: linear-gradient(to right, #e0f7fa, #ece9e9);
+  }
+  
+.registerCard {
+    display: flex;
+    background-color: #0B5A7C;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    width: 85rem;
+    height: 65rem;
+}
+
+.containerImgRegister {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerImgRegister img {
+    max-width: 80%;
+    height: auto;
+}
+
+.containerFormRegister {
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.containerFormRegister h2{
+    font-size: 2rem;
+    text-align: center;
+
+    color: #e0f7fa;
+}
+
+.formRegister{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formRegister label{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.formRegister label span{
+    font-size: 1.5rem;
+    margin-left: 5px;
+    margin-bottom: 5px;
+
+    color: #e0f7fa;
+}
+
+.formRegister label input{
+    padding: 1.5rem;
+    width: 100%;
+    border-radius: 1rem;
+
+    font-size: 1.5rem;
+
+    border: 0;
+}
+
+.passwordLabelRegister {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+.formRegister div input[type='submit']{
+    padding: rem;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.5s ;
+
+    border: 0;
+
+    color: #0B5A7C;
+    background-color: #ece9e9;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+.passwordLabelRegister{
+    color: #fff;
+    margin-top: 3px;
+    font-weight: bolder;
+    text-align: right;
+    transition: 0.5s ease-in-out;
+}
+
+.formRegister div input[type='submit']:hover{
+    opacity: 1;
+    
+}
+
+.containerLogarUser p{
+    font-size: 1.8rem;
+    opacity: 0.6;
+    transition: 0.5s;
+
+    color: #e0f7fa;
+}
+
+.containerLogarUser p:hover{
+    opacity: 1;
+}
+
+.containerLogarUser p a{
+    color: #fff;
+}

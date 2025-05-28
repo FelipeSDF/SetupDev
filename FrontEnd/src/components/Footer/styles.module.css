@@ -1,0 +1,43 @@
+.footer {
+  background-color: #091f3d;
+  color: #eee;
+
+  padding: 2rem;
+}
+
+.footer div {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.footer div p {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.footer div ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  text-decoration: none;
+  list-style: none;
+
+  gap: 1rem;
+}
+
+.footer div li {
+  font-size: 12px;
+}
+
+.footer div li a {
+  color: #fff;
+  text-decoration: none;
+}

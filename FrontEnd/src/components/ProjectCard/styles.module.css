@@ -1,0 +1,54 @@
+.projectsContainer{
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
+}
+
+.projectsContainer li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 40%;
+    max-height: 20rem;
+    height: 20rem;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #8b5a8b;
+
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: ease-in-out 0.4s;
+
+    gap: 1rem;
+}
+
+.projectsContainer li:hover{
+    opacity: 0.8;
+    cursor: pointer;
+    transition: ease-in-out 0.4s;
+}
+.projectsContainer li img{
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.projectName{
+    color: #8b5a8b;
+    font-weight: bold;
+
+    font-size: 2rem;
+}
+
+.projectInfo{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 1rem;
+}
+

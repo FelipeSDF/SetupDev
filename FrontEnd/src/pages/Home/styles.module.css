@@ -1,0 +1,77 @@
+.homeContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homeContainer section{
+    width: 100%;
+}
+
+.wellcomeContainerHome{
+    height: 50vh;
+
+}
+
+.containerVideoHome{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.wellcomeContainerHome .containerVideoHome video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.titleHome{
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    margin-top: 12%;
+
+}
+
+.titleHome h2{
+    font-size: 3rem;
+    color: #ddd;
+    font-weight: bold;
+}
+
+
+.titleHome button{
+    background-color: #0B5A7C;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: ease-in-out 0.4s;
+}
+
+.titleHome button:hover{
+    opacity: 0.8;
+}
+
+.projectsHome{
+    padding: 3rem;
+    margin-bottom: 2rem;
+
+    border-bottom: #0B5A7C dashed 1px;
+}
+
+
+.projectsHome .title, .lastPostHome .title{
+    font-size: 2.5rem;
+    color: #0B5A7C;
+    font-weight: bold;
+    margin-bottom: 2rem;
+
+    text-align: center;
+}
+

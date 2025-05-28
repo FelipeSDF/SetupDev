@@ -1,0 +1,34 @@
+/* .videoContainer{
+
+} */
+
+
+.video{
+
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  
+}
+
+.containerTitleWelcome{
+  height: 100vh;
+  position: relative;
+  z-index: 22;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+}
+
+.title{
+  font-size: 4.8rem;
+}
+
+.paragrafo{
+  font-size: 2rem;
+}
