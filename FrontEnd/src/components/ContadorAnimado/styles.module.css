@@ -1,0 +1,5 @@
+.container{
+    font-size: clamp(1rem, 30vw, 8rem);
+
+    font-weight: bold;
+}

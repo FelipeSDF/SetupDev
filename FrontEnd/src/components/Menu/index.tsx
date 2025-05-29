@@ -23,7 +23,7 @@ export function Menu() {
           <li>Destaques</li>
           <li>Seus projetos</li>
           <li>Criar Projeto</li>
-          <li>Contatos</li>
+          <li><a href="#form">Contato</a></li>
         </ul>
         <button className={styles.userBar}>
           <User2Icon />

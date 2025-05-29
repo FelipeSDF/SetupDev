@@ -1,0 +1,172 @@
+/* Projetos */
+
+.containerProject {
+  height: 100vh;
+  overflow: visible; /* alterado para garantir que thumbs apareçam */
+  position: relative; /* para contexto do position absolute das thumbs */
+}
+
+.list {
+  position: relative;
+  height: 100%;
+  display: flex;
+  transition: left 0.5s ease-in-out;
+}
+
+.listItem {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.listItem img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(50%);
+}
+
+.content {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  padding-right: 30%;
+  width: 80%;
+  color: #eee;
+  text-shadow: 0 5px 10px #0004;
+}
+
+.title {
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 1.3em;
+}
+
+.descriptionProject {
+  font-size: 1.5em;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px;
+  text-transform: uppercase;
+  border: 1px #eee solid;
+  background-color: transparent;
+  color: #eee;
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  color: #000;
+  background-color: #eee;
+}
+
+/* Atualização: thumb posicionada absolute para ficar visível */
+
+.thumb {
+  position: absolute; /* para sair do fluxo normal */
+  bottom: 30px;       /* posicionamento fixo na parte inferior */
+  right: 150px;       /* alinhamento igual ao padding-right antigo */
+  display: flex;
+  gap: 20px;
+  z-index: 100;       /* garantir que fique na frente */
+  padding: 0;         /* removido padding */
+  height: auto;       /* ajustar altura automaticamente */
+  width: auto;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.thumbItem {
+  width: 135px;
+  height: 200px;
+  position: relative;
+  z-index: 101; /* acima das thumbs e container */
+}
+
+.thumbItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.thumbItem h3 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #eee;
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 150px;
+  left: 120px;
+  width: 300px;
+}
+
+.arrowBtn {
+  border-radius: 10px;
+  border: none;
+  padding: 12px 17px;
+  background-color: #eee4;
+  color: #eee;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.5em;
+  transition: ease-in-out 0.4s;
+}
+
+.arrowBtn:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+@keyframes effectNextThumb {
+  from {
+    transform: translateX(150px);
+  }
+}
+
+@keyframes effectLastThumb {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes showContent {
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes showMainImage {
+  to {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+
+@keyframes hideMainImage {
+  to {
+    width: 135px;
+    height: 200px;
+    border-radius: 10px;
+    left: 61%;
+    bottom: 32px;
+    opacity: 0;
+  }
+}

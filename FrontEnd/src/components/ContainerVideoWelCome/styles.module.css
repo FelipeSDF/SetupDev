@@ -26,9 +26,9 @@
 }
 
 .title{
-  font-size: 4.8rem;
+   font-size: clamp(1rem, 30vw, 6rem);
 }
 
 .paragrafo{
-  font-size: 2rem;
+  font-size: clamp(0.8rem, 30vw, 2rem);
 }

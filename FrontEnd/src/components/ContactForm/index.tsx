@@ -1,28 +1,30 @@
-import type React from 'react';
 import styles from './styles.module.css';
 import { PhoneCallIcon } from 'lucide-react';
+import { DefaultInput } from '../DefaultInput';
+import { DefaultTextArea } from '../DefaultTextArea';
 
 type ContactFormProps= {
   title: string;
-} & React.ComponentProps<'input'>
+}
 
-export function ContactForm({title, type, ...rest} : ContactFormProps) {
+export function ContactForm({title} : ContactFormProps) {
   return (
-    <form className={styles.form}>
-      <div>
+    <form id='form' className={styles.form}>
+      <div className={styles.containerTitle}>
         <h2>{title} {<PhoneCallIcon/>}</h2>
       </div>
       <div>
-        <label htmlFor="name">Nome</label>
-        <input type={type} name='name' id='name'/>
+        <DefaultInput id='nameContact' labelText='Nome' type='text' placeholder='Name'/>
       </div>
       <div>
-        <label htmlFor="name">Nome</label>
-        <input type={type} name='name' {...rest}/>
+        <DefaultInput id='emailContact' labelText='E-mail' type='email' placeholder='e-mail'/>
       </div>
       <div>
-        <label htmlFor="name">Nome</label>
-        <input type="text" name='name' id='name'/>
+        <DefaultTextArea/>
+      </div>
+
+      <div>
+        <button className={styles.button}>Enviar</button>
       </div>
     </form>
   );

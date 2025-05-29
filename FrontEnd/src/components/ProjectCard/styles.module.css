@@ -1,15 +1,19 @@
 .projectsContainer{
     display: flex;
     justify-content: space-around;
-    gap: 3rem;
+    flex-direction: column;
+
+    gap: 8rem;
+    padding: 4rem;
 }
 
 .projectsContainer li{
     display: flex;
     justify-content: center;
     align-items: center;
+
     
-    width: 40%;
+    width: 50%;
     max-height: 20rem;
     height: 20rem;
     background-color: #fff;
