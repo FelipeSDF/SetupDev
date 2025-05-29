@@ -1,5 +1,4 @@
 .container{
-  height: 100vh;
 
   background-color: rgb(243, 243, 249);
 
@@ -7,4 +6,5 @@
 
 .content{
     display: flex;
+    flex-wrap: wrap;
 }

@@ -51,4 +51,16 @@
 .containerChildren {
   display: flex;
   gap: 4rem;
+
+}
+
+.containerChildren svg{
+  cursor: pointer;
+  
+  
+}
+
+
+.containerChildren svg:hover{
+  color: rgb(60, 60, 108);
 }
