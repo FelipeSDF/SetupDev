@@ -1,4 +1,5 @@
 import { MainTemplate } from '../../templates/MainTemplate';
+import { Container } from '../../components/Container';
 
 import img1 from '../../assets/img/ProjectsImgs/img1.jpg';
 import img2 from '../../assets/img/ProjectsImgs/img2.jpg';
@@ -7,21 +8,20 @@ import { HeadingProfile } from '../../components/HeadingProfile';
 import { Settings2Icon, ShareIcon } from 'lucide-react';
 import { InfoCard } from '../../components/InfoCard';
 import { ProjectCard } from '../../components/ProjectCard';
-import { ContainerSideToSide } from '../../components/Container copy';
 
 export function Profile() {
   return (
     <MainTemplate>
-      <HeadingProfile
-        UrlImgBanner={img1}
-        UrlImgProfile={img2}
-        Name='Joao Martes de Araujo Santos'
-      >
-        <ShareIcon />
-        <Settings2Icon />
-      </HeadingProfile>
+      <Container>
+        <HeadingProfile
+          UrlImgBanner={img1}
+          UrlImgProfile={img2}
+          Name='Joao Martes de Araujo Santos'
+        >
+          <ShareIcon />
+          <Settings2Icon />
+        </HeadingProfile>
 
-      <ContainerSideToSide>
         <InfoCard
           titulo='Biografia'
           paragrafo='Estudante do terceiro periodo de engenharia de software da universidade federal de Marica, comecei na area da tecnologia em 1999, mas, minha paixao por historia e desenvolvimento pre-historico sempre chamou minha atencao'
@@ -30,14 +30,17 @@ export function Profile() {
           titulo='Formacao academica'
           paragrafo='Engenheiro de sooftware e historiador pela universidade federal de Marica'
         />
-      </ContainerSideToSide>
-      <ProjectCard
-        createDate='20/10/1985'
-        description='Projeto criado na era pre historica, mas, que tem belas imagens para voce apreciar'
-        name='Dinotorica'
-        status='In progress'
-        img={img3}
-      />
+      </Container>
+
+      <Container>
+        <ProjectCard
+          createDate='20/10/1985'
+          description='Projeto criado na era pre historica, mas, que tem belas imagens para voce apreciar'
+          name='Dinotorica'
+          status='In progress'
+          img={img3}
+        />
+      </Container>
     </MainTemplate>
   );
 }

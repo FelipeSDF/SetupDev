@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import styles from './styles.module.css';
 
 import img1 from '../../assets/img/ProjectsImgs/img1.jpg';
@@ -34,30 +34,40 @@ const projetos = [
 ];
 
 export function ProjectCarousel() {
-  const [active, setActive] = useState(0);
-  const listRef = useRef<HTMLDivElement>(null);
-  const lengthItems = projetos.length;
+  const [items, setItems] = useState(projetos);
+  const [animation, setAnimation] = useState('');
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleNext = () => {
-    setActive(prev => (prev + 1) % lengthItems);
+  const handleMove = (type: 'next' | 'back') => {
+    setAnimation(type);
+
+    setTimeout(() => {
+      setItems(prev => {
+        if (type === 'next') {
+          // move o primeiro para o final
+          const [first, ...rest] = prev;
+          return [...rest, first];
+        } else {
+          // move o último para o início
+          const last = prev[prev.length - 1];
+          const rest = prev.slice(0, -1);
+          return [last, ...rest];
+        }
+      });
+
+      setAnimation('');
+    }, 300); // tempo da animação
   };
-
-  const handleBack = () => {
-    setActive(prev => (prev - 1 + lengthItems) % lengthItems);
-  };
-
-  useEffect(() => {
-    const list = listRef.current;
-    if (list) {
-      const width = list.children[0].clientWidth; // largura do item
-      list.style.transform = `translateX(-${active * width}px)`;
-    }
-  }, [active]);
 
   return (
-    <section className={styles.containerProject}>
-      <div className={styles.list} ref={listRef}>
-        {projetos.map((projeto, i) => (
+    <section
+      className={`${styles.containerProject} ${animation === 'next' ? styles.next : ''} ${
+        animation === 'back' ? styles.back : ''
+      }`}
+      ref={containerRef}
+    >
+      <div className={styles.list}>
+        {items.map((projeto, i) => (
           <div className={styles.listItem} key={i}>
             <img src={projeto.imagem} alt={projeto.titulo} />
             <div className={styles.content}>
@@ -70,12 +80,8 @@ export function ProjectCarousel() {
       </div>
 
       <div className={styles.thumb}>
-        {projetos.map((projeto, i) => (
-          <div
-            className={`${styles.thumbItem} ${i === active ? styles.thumbItemActive : ''}`}
-            key={i}
-            onClick={() => setActive(i)}
-          >
+        {items.map((projeto, i) => (
+          <div className={styles.thumbItem} key={i}>
             <img src={projeto.imagem} alt={projeto.titulo} />
             <h3>{projeto.titulo}</h3>
           </div>
@@ -83,10 +89,10 @@ export function ProjectCarousel() {
       </div>
 
       <div className={styles.arrows}>
-        <button className={styles.arrowBtn} onClick={handleBack}>
+        <button className={styles.arrowBtn} onClick={() => handleMove('back')}>
           &lt;
         </button>
-        <button className={styles.arrowBtn} onClick={handleNext}>
+        <button className={styles.arrowBtn} onClick={() => handleMove('next')}>
           &gt;
         </button>
       </div>

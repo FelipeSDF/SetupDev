@@ -20,7 +20,7 @@ export function ContactForm({title} : ContactFormProps) {
         <DefaultInput id='emailContact' labelText='E-mail' type='email' placeholder='e-mail'/>
       </div>
       <div>
-        <DefaultTextArea/>
+        <DefaultTextArea name='message'/>
       </div>
 
       <div>

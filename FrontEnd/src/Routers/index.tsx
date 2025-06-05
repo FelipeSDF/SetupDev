@@ -4,6 +4,7 @@ import { Landing } from '../pages/Landing';
 import { Login } from '../components/Login';
 import { Register } from '../components/Register';
 import { Profile } from '../pages/Profile';
+import { Project } from '../pages/Project';
 
 
 export function Routers() {
@@ -14,6 +15,7 @@ export function Routers() {
       <Route path='/register' element={<Register />} />
       <Route path='/home' element={<Home />} />
       <Route path='/profile' element={<Profile />} />
+      <Route path='/project' element={<Project />} />
     </Routes>
   );
 }
