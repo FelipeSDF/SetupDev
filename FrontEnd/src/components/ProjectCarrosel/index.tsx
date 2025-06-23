@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 
 import img1 from '../../assets/img/ProjectsImgs/img1.jpg';
@@ -34,65 +34,75 @@ const projetos = [
 ];
 
 export function ProjectCarousel() {
-  const [items, setItems] = useState(projetos);
-  const [animation, setAnimation] = useState('');
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleMove = (type: 'next' | 'back') => {
-    setAnimation(type);
-
-    setTimeout(() => {
-      setItems(prev => {
-        if (type === 'next') {
-          // move o primeiro para o final
-          const [first, ...rest] = prev;
-          return [...rest, first];
-        } else {
-          // move o último para o início
-          const last = prev[prev.length - 1];
-          const rest = prev.slice(0, -1);
-          return [last, ...rest];
-        }
-      });
-
-      setAnimation('');
-    }, 300); // tempo da animação
+  // Navegar para o próximo projeto
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % projetos.length);
   };
 
+  // Navegar para o projeto anterior
+  const handleBack = () => {
+    setCurrentIndex((prev) => (prev - 1 + projetos.length) % projetos.length);
+  };
+
+  // Ir direto para projeto clicado na miniatura
+  const handleSelect = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  // Autoplay: troca slide a cada 5 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section
-      className={`${styles.containerProject} ${animation === 'next' ? styles.next : ''} ${
-        animation === 'back' ? styles.back : ''
-      }`}
-      ref={containerRef}
-    >
-      <div className={styles.list}>
-        {items.map((projeto, i) => (
-          <div className={styles.listItem} key={i}>
+    <section id='containerProjectLanding' className={styles.containerProject}>
+      {/* Imagem principal */}
+      <div className={styles.mainImage}>
+        <img
+          src={projetos[currentIndex].imagem}
+          alt={projetos[currentIndex].titulo}
+          className={styles.mainImg}
+        />
+        <div className={styles.content}>
+          <h2 className={styles.title}>{projetos[currentIndex].titulo}</h2>
+          <p className={styles.descriptionProject}>
+            {projetos[currentIndex].descricao}
+          </p>
+          <button className={styles.btn}>Saiba Mais</button>
+        </div>
+      </div>
+
+      {/* Miniaturas */}
+      <div className={styles.thumbs}>
+        {projetos.map((projeto, i) => (
+          <div
+            key={i}
+            className={`${styles.thumbItem} ${
+              i === currentIndex ? styles.thumbActive : ''
+            }`}
+            onClick={() => handleSelect(i)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') handleSelect(i);
+            }}
+          >
             <img src={projeto.imagem} alt={projeto.titulo} />
-            <div className={styles.content}>
-              <h2 className={styles.title}>{projeto.titulo}</h2>
-              <p className={styles.descriptionProject}>{projeto.descricao}</p>
-              <button className={styles.btn}>Saiba Mais</button>
-            </div>
           </div>
         ))}
       </div>
 
-      <div className={styles.thumb}>
-        {items.map((projeto, i) => (
-          <div className={styles.thumbItem} key={i}>
-            <img src={projeto.imagem} alt={projeto.titulo} />
-            <h3>{projeto.titulo}</h3>
-          </div>
-        ))}
-      </div>
-
+      {/* Botões next/back */}
       <div className={styles.arrows}>
-        <button className={styles.arrowBtn} onClick={() => handleMove('back')}>
+        <button className={styles.arrowBtn} onClick={handleBack}>
           &lt;
         </button>
-        <button className={styles.arrowBtn} onClick={() => handleMove('next')}>
+        <button className={styles.arrowBtn} onClick={handleNext}>
           &gt;
         </button>
       </div>

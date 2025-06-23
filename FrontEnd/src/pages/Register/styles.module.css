@@ -1,0 +1,106 @@
+/* Container geral que centraliza tudo */
+.containerPageRegister {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-image: linear-gradient(to right, #e0f7fa, #ece9e9);
+}
+
+.registerCard {
+  display: flex;
+  background-color: #0b5a7c;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  width: 85rem;
+  height: 65rem;
+}
+
+.containerImgRegister {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerImgRegister img {
+  max-width: 80%;
+  height: auto;
+}
+
+.containerFormRegister {
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.containerFormRegister h2 {
+  font-size: 2rem;
+  text-align: center;
+
+  color: #e0f7fa;
+}
+
+.formRegister {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formRegister div label {
+  font-size: 1.5rem;
+  margin-left: 5px;
+
+  color: #fff;
+  margin-top: 3px;
+  font-weight: bolder;
+}
+
+.formRegister div input {
+  padding: 1.5rem;
+  width: 100%;
+  border-radius: 1rem;
+
+  font-size: 1.5rem;
+
+  border: 0;
+}
+
+.formRegister div input[type='submit'] {
+  width: 100%;
+  cursor: pointer;
+  transition: 0.5s;
+
+  color: #0b5a7c;
+  background-color: #ece9e9;
+  font-weight: bold;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+.passwordLabelRegister {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  color: #fff;
+  margin-top: 3px;
+  font-weight: bolder;
+  text-align: right;
+  transition: 0.5s ease-in-out;
+}
+
+.formRegister div input[type='submit']:hover {
+  opacity: 1;
+}
+
+.containerLogarUser a {
+  font-size: 1.8rem;
+  opacity: 0.6;
+  transition: 0.5s;
+
+  color: #e0f7fa;
+}

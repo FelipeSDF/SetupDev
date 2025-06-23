@@ -1,11 +1,12 @@
-import { Route, Routes } from 'react-router';
+import { Route, Routes } from 'react-router-dom';
+
 import { Home } from '../pages/Home';
 import { Landing } from '../pages/Landing';
-import { Login } from '../components/Login';
-import { Register } from '../components/Register';
+import { Login } from '../pages/Login';
+import { Register } from '../pages/Register';
 import { Profile } from '../pages/Profile';
 import { Project } from '../pages/Project';
-
+import { CreateProject } from '../pages/CreateProject';
 
 export function Routers() {
   return (
@@ -15,6 +16,7 @@ export function Routers() {
       <Route path='/register' element={<Register />} />
       <Route path='/home' element={<Home />} />
       <Route path='/profile' element={<Profile />} />
+      <Route path='/create-project' element={<CreateProject />} />
       <Route path='/project' element={<Project />} />
     </Routes>
   );

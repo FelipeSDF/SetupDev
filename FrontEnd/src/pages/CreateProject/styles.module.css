@@ -1,0 +1,65 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  background-color: #0B5A7C;
+}
+
+.contentForm {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 1rem;
+  width: 80rem;
+  height: 50rem;
+
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  background: #d3d3d3;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  gap: 2rem;
+}
+
+.containerInputName,
+.containerInputDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerFiles {
+  display: flex;
+
+  width: 40rem;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.btnSubmit {
+  cursor: pointer;
+
+  width: 20rem;
+  height: 4rem;
+
+  background: #0B5A7C;
+  color: white;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  transition: 0.4s ease-in-out;
+}
+
+.btnSubmit:hover{
+  opacity: 0.5;
+}

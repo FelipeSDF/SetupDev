@@ -2,23 +2,38 @@ import { MainTemplate } from '../../templates/MainTemplate';
 
 import img1 from '../../assets/img/ProjectsImgs/img1.jpg';
 import img2 from '../../assets/img/ProjectsImgs/img2.jpg';
-import img3 from '../../assets/img/ProjectsImgs/img3.jpg';
 import { HeadingProfile } from '../../components/HeadingProfile';
-import { Settings2Icon, ShareIcon } from 'lucide-react';
+import { PenIcon, ShareIcon } from 'lucide-react';
 import { InfoCard } from '../../components/InfoCard';
 import { ProjectCard } from '../../components/ProjectCard';
-import { ContainerSideToSide } from '../../components/Container copy';
+import { ContainerSideToSide } from '../../components/ContainerSideToSide';
+import { useEffect, useState } from 'react';
+import { getProjectsByUser } from '../../services/projectService';
+import type { ProjectModel } from '../../models/ProjectModel';
+import { useAuth } from '../../contexts/useAuth';
 
 export function Profile() {
+  const { user } = useAuth();
+  console.log(user)
+  const [projects, setProjects] = useState<ProjectModel[]>([]);
+
+  console.log(projects)
+
+  useEffect(() => {
+    if (user?.userName) {
+      getProjectsByUser(user.userName).then(setProjects);
+    }
+  }, [user]);
+
   return (
     <MainTemplate>
       <HeadingProfile
         UrlImgBanner={img1}
         UrlImgProfile={img2}
-        Name='Joao Martes de Araujo Santos'
+        Name={user?.name ?? 'Usuário'}
       >
         <ShareIcon />
-        <Settings2Icon />
+        <PenIcon />
       </HeadingProfile>
 
       <ContainerSideToSide>
@@ -31,13 +46,22 @@ export function Profile() {
           paragrafo='Engenheiro de sooftware e historiador pela universidade federal de Marica'
         />
       </ContainerSideToSide>
-      <ProjectCard
-        createDate='20/10/1985'
-        description='Projeto criado na era pre historica, mas, que tem belas imagens para voce apreciar'
-        name='Dinotorica'
-        status='In progress'
-        img={img3}
-      />
+
+      {projects.length === 0 ? (
+        <h2>Voce ainda não criou nenhum projeto</h2>
+      ) : (
+        <>
+          {projects.map(project => (
+            <ProjectCard
+              key={project.id}
+              name={project.title}
+              createDate={project.createdAt}
+              description={project.description}
+              img={project.profileImagemProject}
+            />
+          ))}
+        </>
+      )}
     </MainTemplate>
   );
 }

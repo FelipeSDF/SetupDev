@@ -1,14 +1,28 @@
+import styles from './styles.module.css';
 
-import styles from './styles.module.css'
+type DefaultTextAreaProps = {
+  id?: string;
+  name: string;
+  labelText?: string;
+  placeholderText?: string;
+};
 
-type DefaultTextAreaProps ={
-  name: string
-}
-
-export function DefaultTextArea({name} : DefaultTextAreaProps) {
+export function DefaultTextArea({
+  name,
+  labelText,
+  placeholderText,
+  id,
+  ...rest
+}: DefaultTextAreaProps) {
   return (
     <>
-      <textarea className={styles.textarea} placeholder='Digite sua mensagem' name={name}></textarea>
+      {labelText && <label htmlFor={id}>{labelText}</label>}
+      <textarea
+        className={styles.textarea}
+        placeholder={placeholderText}
+        name={name}
+        {...rest}
+      ></textarea>
     </>
   );
 }

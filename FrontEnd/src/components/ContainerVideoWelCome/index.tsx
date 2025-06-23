@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import UniverseVideo from '../../assets/video/universo.mp4'
 import styles from './styles.module.css'
 
@@ -8,6 +9,7 @@ export function ContainerVideoWelCome(){
       <div className={styles.containerTitleWelcome}>
         <h1 className={styles.title}>Bem vindo a Capmar</h1>
         <p className={styles.paragrafo}>Pronto para elevar seu projeto?</p>
+        <button className={styles.button}><Link to='/register'>Estou Pronto</Link></button>
       </div>
     </div>
   )

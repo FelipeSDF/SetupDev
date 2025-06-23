@@ -1,0 +1,38 @@
+{
+  "usuarios": [
+    {
+      "id": "fd9f",
+      "name": "Cristian",
+      "userName": "cristianbsoficial",
+      "email": "ra202413716@univassouras.edu.br",
+      "password": "12"
+    },
+    {
+      "id": "e438",
+      "name": "Rhyan",
+      "userName": "RhyanBS2",
+      "email": "maraielianes247@gmail.com",
+      "password": "10"
+    }
+  ],
+  "projetos": [
+    {
+      "id": "a443",
+      "title": "Capimar",
+      "description": "fusefu  hfohseof hsdoif sd hiodshfj iohfiodhd d ds",
+      "coverImage": "blob:http://localhost:5173/7610f45f-58d9-4184-8ea4-0281b3e63a78",
+      "profileImagemProject": "blob:http://localhost:5173/a8eca878-4c8d-451d-baa5-b13b4c951b3a",
+      "authorUserName": "cristianbsoficial",
+      "createdAt": "22/06/2025, 00:08"
+    },
+    {
+      "id": "cd0c",
+      "title": "bdfdfb",
+      "description": "bdfbdfbfdbfd",
+      "coverImage": "blob:http://localhost:5174/213a16da-6d9d-4fa0-9e61-4b2cebe1d2dd",
+      "profileImagemProject": "blob:http://localhost:5174/78cb2ff6-bfb4-4093-8abf-7b7616d1e5b6",
+      "authorUserName": "RhyanBS2",
+      "createdAt": "22/06/2025, 00:43"
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 .nav{
   position: absolute;
 
-  z-index: 50;
+  z-index: 5000;
   width: 100%;
 
   padding: 0 3rem;
+
 
 
 }
@@ -24,26 +25,40 @@
 
 .search{
     width: 30%;
-    border: 1px solid #0B5A7C;
-    border-radius: 5px;
 
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+
+
 .search input{
-    border-radius: 5px;
-    width: 95%;
+    width: 100%;
     padding: 1rem;
+
+    border-radius: 0.4rem;
     
 }
 
+.search input:focus{
+  outline: none;
+}
+
 .search button{
-    width: 5%;
-    background-color: #0B5A7C;
-    color: white;
+    color: #0B5A7C;
+    background-color: transparent;
     border: none;
-    padding: 1rem;
     cursor: pointer;
+
+    position: relative;
+    right: 3rem;
+
+    transition: ease-in-out 0.2s;
+}
+
+.search button:hover{
+  color: black;
 }
 
 .optionsNav{
@@ -63,6 +78,8 @@
   cursor: pointer;
 
   transition: ease-in-out all 0.3s;
+
+  font-weight: bold;
 }
 
 .optionsNav li:hover{
@@ -77,6 +94,10 @@
 
     cursor: pointer;
 
+}
+
+.userBar a{
+  color: black;
 }
 
 .userBar:hover{

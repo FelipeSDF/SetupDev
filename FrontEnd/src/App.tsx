@@ -1,15 +1,17 @@
-import './styles/theme.css'
-import './styles/global.css'
+import './styles/global.css';
+import './styles/theme.css';
 
-
-import { BrowserRouter } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import { Routers } from './Routers';
+import { AuthProvider } from './contexts/AuthProvider';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routers />
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routers />
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

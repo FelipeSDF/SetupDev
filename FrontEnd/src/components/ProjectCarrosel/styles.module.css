@@ -1,173 +1,130 @@
-/* Projetos */
-
 .containerProject {
-  height: 100vh;
-  overflow: visible; 
-  position: relative; 
-}
-
-.list {
   position: relative;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
-  transition: left 0.5s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.listItem {
+.mainImage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mainImg {
   width: 100%;
   height: 100%;
-  position: absolute;
-
-}
-
-.listItem img {
   object-fit: cover;
-  width: 100%;
-  height: 100%;
-  filter: brightness(50%);
+  filter: brightness(0.5);
+  transition: filter 0.5s ease-in-out;
 }
 
 .content {
   position: absolute;
-  top: 20%;
-  right: 10%;
-  padding-right: 30%;
-  width: 80%;
+  top: 15%;
+  left: 5%;
   color: #eee;
-  text-shadow: 0 5px 10px #0004;
+  max-width: 50%;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .title {
-  font-size: 3em;
-  font-weight: bold;
-  line-height: 1.3em;
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .descriptionProject {
-  font-size: 1.5em;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  font-weight: 300;
 }
 
 .btn {
-  margin-top: 20px;
-  padding: 10px;
-  text-transform: uppercase;
-  border: 1px #eee solid;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 2px solid #eee;
   background-color: transparent;
   color: #eee;
   cursor: pointer;
-  transition: ease-in-out 0.4s;
-  letter-spacing: 2px;
-  font-weight: bold;
-  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  letter-spacing: 1.5px;
 }
 
 .btn:hover {
-  color: #000;
   background-color: #eee;
+  color: #121212;
 }
 
-.thumb {
-  position: absolute; 
-  bottom: 30px;      
-  right: 150px;    
+.thumbs {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
   display: flex;
-  gap: 20px;
-  z-index: 100;       
-  padding: 0;        
-  height: auto;      
-  width: auto;
-  align-items: flex-end;
-  justify-content: flex-end;
+  gap: 16px;
+  z-index: 20;
 }
 
 .thumbItem {
-  width: 135px;
-  height: 200px;
-  position: relative;
-  z-index: 101; 
+  width: 120px;
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  filter: brightness(0.7);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .thumbItem img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  display: block;
+  border-radius: inherit;
 }
 
-.thumbItem h3 {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: #eee;
+.thumbItem:hover,
+.thumbActive {
+  filter: brightness(1);
+  border-color: #eee;
+  box-shadow: 0 0 12px #eee;
+  transform: scale(1.05);
 }
 
 .arrows {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   position: absolute;
-  bottom: 150px;
-  left: 120px;
-  width: 300px;
+  bottom: 180px;
+  left: 50px;
+  display: flex;
+  gap: 16px;
+  z-index: 20;
 }
 
 .arrowBtn {
-  border-radius: 10px;
+  padding: 12px 22px;
+  border-radius: 50%;
   border: none;
-  padding: 12px 17px;
   background-color: #eee4;
   color: #eee;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 1.5em;
-  transition: ease-in-out 0.4s;
+  font-weight: 700;
+  font-size: 1.8rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 10px #0004;
 }
 
 .arrowBtn:hover {
   background-color: #eee;
-  color: #000;
+  color: #121212;
 }
-
-@keyframes effectNextThumb {
-  from {
-    transform: translateX(150px);
-  }
-}
-
-@keyframes effectLastThumb {
-  from {
-    width: 0;
-    opacity: 0;
-  }
-}
-
-@keyframes showContent {
-  to {
-    transform: translateY(0);
-    filter: blur(0);
-    opacity: 1;
-  }
-}
-
-@keyframes showMainImage {
-  to {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-  }
-}
-
-@keyframes hideMainImage {
-  to {
-    width: 135px;
-    height: 200px;
-    border-radius: 10px;
-    left: 61%;
-    bottom: 32px;
-    opacity: 0;
-  }
-}
-
-

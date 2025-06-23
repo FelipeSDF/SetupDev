@@ -20,11 +20,11 @@ export function ContactForm({title} : ContactFormProps) {
         <DefaultInput id='emailContact' labelText='E-mail' type='email' placeholder='e-mail'/>
       </div>
       <div>
-        <DefaultTextArea name='message'/>
+        <DefaultTextArea placeholderText='Digite sua mensagem' name='message'/>
       </div>
 
       <div>
-        <button className={styles.button}>Enviar</button>
+        <DefaultInput type='submit' className={styles.button}/>
       </div>
     </form>
   );

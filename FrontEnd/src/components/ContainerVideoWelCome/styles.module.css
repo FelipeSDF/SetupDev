@@ -2,17 +2,14 @@
 
 } */
 
-
-.video{
-
+.video {
   height: 100vh;
   width: 100%;
   object-fit: cover;
   position: absolute;
-  
 }
 
-.containerTitleWelcome{
+.containerTitleWelcome {
   height: 100vh;
   position: relative;
   z-index: 22;
@@ -25,10 +22,22 @@
   color: #fff;
 }
 
-.title{
-   font-size: clamp(1rem, 30vw, 6rem);
+.title {
+  font-size: clamp(1rem, 30vw, 6rem);
 }
 
-.paragrafo{
+.paragrafo {
   font-size: clamp(0.8rem, 30vw, 2rem);
+}
+
+.button {
+  background-color: #0b5a7c;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+
+  margin-top: 2rem;
 }

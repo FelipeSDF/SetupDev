@@ -1,0 +1,15 @@
+.btn{
+  position: fixed;
+  top: 15%;
+  right: 95%;
+  border-radius: 0.5rem;
+}
+
+.btn a{
+  display: flex;
+  padding: 0.5rem;
+
+  border-radius: 0.5rem;
+
+  background-color: rgba(244, 46, 46, 0.772);
+}

@@ -18,7 +18,7 @@ html{
 
 body{
     font-size: 1.6rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -43,4 +43,6 @@ a{
 a:hover{
     filter: brightness(80%);
 }
+
+
 
