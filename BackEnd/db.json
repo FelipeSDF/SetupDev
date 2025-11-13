@@ -32,6 +32,13 @@
       "profileImg": "",
       "bio": "Curioso por IA e aprendizado de máquina.",
       "formation": "Ciência da Computação pela UFF"
+    },
+    {
+      "id": "7de3",
+      "name": "Renan",
+      "userName": "rennan",
+      "email": "rennan@gmail.com",
+      "password": "123"
     }
   ],
   "projetos": [

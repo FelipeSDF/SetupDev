@@ -1,6 +1,6 @@
 import { type ProjectModel } from '../models/ProjectModel';
 
-const url = 'http://localhost:3001/projetos';
+const url = 'http://localhost:3000/projetos';
 
 export async function createProject(data: ProjectModel): Promise<ProjectModel> {
   try {

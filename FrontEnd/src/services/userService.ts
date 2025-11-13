@@ -1,6 +1,6 @@
 import { type UserModel } from '../models/UserModel';
 
-const url = 'http://localhost:3001/usuarios';
+const url = 'http://localhost:3000/usuarios';
 
 /**
  * 🔹 Retorna todos os usuários
