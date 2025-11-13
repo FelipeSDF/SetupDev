@@ -51,11 +51,13 @@ export function Home() {
               {allProjects.map(project => (
                 <ProjectCard
                   key={project.id}
+                  id={project.id}
                   name={project.title}
                   createDate={project.createdAt}
                   description={project.description}
                   img={project.profileImagemProject}
                 />
+
               ))}
             </div>
           )}
@@ -70,13 +72,15 @@ export function Home() {
           ) : (
             <div className={styles.projectContainer}>
               {userProjects.map(project => (
-                <ProjectCard
-                  key={project.id}
-                  name={project.title}
-                  createDate={project.createdAt}
-                  description={project.description}
-                  img={project.profileImagemProject}
-                />
+                  <ProjectCard
+                    key={project.id}
+                    id={project.id}
+                    name={project.title}
+                    createDate={project.createdAt}
+                    description={project.description}
+                    img={project.profileImagemProject}
+                  />
+
               ))}
             </div>
           )}

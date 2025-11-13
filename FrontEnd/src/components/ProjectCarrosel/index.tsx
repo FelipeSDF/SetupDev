@@ -1,98 +1,89 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
-
-import img1 from '../../assets/img/ProjectsImgs/img1.jpg';
-import img2 from '../../assets/img/ProjectsImgs/img2.jpg';
-import img3 from '../../assets/img/ProjectsImgs/img3.jpg';
-import img4 from '../../assets/img/ProjectsImgs/img4.jpg';
-
-const projetos = [
-  {
-    titulo: 'Projeto Inovador 1',
-    imagem: img1,
-    descricao:
-      'Este projeto é voltado para a inovação tecnológica, buscando solucionar problemas reais de forma criativa.',
-  },
-  {
-    titulo: 'Projeto Sustentável 2',
-    imagem: img2,
-    descricao:
-      'Focado em soluções sustentáveis, este projeto visa promover a conscientização ambiental.',
-  },
-  {
-    titulo: 'Educação para Todos 3',
-    imagem: img3,
-    descricao:
-      'Este projeto visa a inclusão social e educacional, promovendo aprendizado para todos.',
-  },
-  {
-    titulo: 'Tecnologia e Inovação 4',
-    imagem: img4,
-    descricao:
-      'Com foco em tecnologia de ponta, este projeto explora novas formas de inovação.',
-  },
-];
+import { getAllProjects } from '../../services/projectService';
+import type { ProjectModel } from '../../models/ProjectModel';
+import { Link } from 'react-router-dom';
 
 export function ProjectCarousel() {
+  const [projects, setProjects] = useState<ProjectModel[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Navegar para o próximo projeto
+  // 🔹 Buscar todos os projetos e pegar 4 aleatórios
+  useEffect(() => {
+    getAllProjects()
+      .then((data) => {
+        // embaralha e pega apenas 4
+        const shuffled = data.sort(() => 0.5 - Math.random()).slice(0, 4);
+        setProjects(shuffled);
+      })
+      .catch(console.error);
+  }, []);
+
+  // 🔹 Funções de navegação
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % projetos.length);
+    setCurrentIndex((prev) => (prev + 1) % projects.length);
   };
 
-  // Navegar para o projeto anterior
   const handleBack = () => {
-    setCurrentIndex((prev) => (prev - 1 + projetos.length) % projetos.length);
+    setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
-  // Ir direto para projeto clicado na miniatura
   const handleSelect = (index: number) => {
     setCurrentIndex(index);
   };
 
-  // Autoplay: troca slide a cada 5 segundos
+  // 🔹 Autoplay a cada 5 segundos
   useEffect(() => {
+    if (projects.length === 0) return;
     const interval = setInterval(() => {
       handleNext();
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [projects]);
+
+  // 🔹 Renderização condicional (espera os dados carregarem)
+  if (projects.length === 0) {
+    return <h2>Carregando projetos...</h2>;
+  }
+
+  const currentProject = projects[currentIndex];
 
   return (
     <section id='containerProjectLanding' className={styles.containerProject}>
       {/* Imagem principal */}
       <div className={styles.mainImage}>
         <img
-          src={projetos[currentIndex].imagem}
-          alt={projetos[currentIndex].titulo}
+          src={currentProject.coverImage}
+          alt={currentProject.title}
           className={styles.mainImg}
         />
         <div className={styles.content}>
-          <h2 className={styles.title}>{projetos[currentIndex].titulo}</h2>
+          <h2 className={styles.title}>{currentProject.title}</h2>
           <p className={styles.descriptionProject}>
-            {projetos[currentIndex].descricao}
+            {currentProject.description}
           </p>
-          <button className={styles.btn}>Saiba Mais</button>
+          <Link to={`/projeto/${currentProject.id}`}>
+            <button className={styles.btn}>Saiba Mais</button>
+          </Link>
         </div>
       </div>
 
       {/* Miniaturas */}
       <div className={styles.thumbs}>
-        {projetos.map((projeto, i) => (
+        {projects.map((project, i) => (
           <div
-            key={i}
+            key={project.id}
             className={`${styles.thumbItem} ${
               i === currentIndex ? styles.thumbActive : ''
             }`}
             onClick={() => handleSelect(i)}
-            role="button"
+            role='button'
             tabIndex={0}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') handleSelect(i);
             }}
           >
-            <img src={projeto.imagem} alt={projeto.titulo} />
+            <img src={project.profileImagemProject} alt={project.title} />
           </div>
         ))}
       </div>

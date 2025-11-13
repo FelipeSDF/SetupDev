@@ -86,15 +86,6 @@
       "profileImagemProject": "https://picsum.photos/150?random=15",
       "authorUserName": "beatriz",
       "createdAt": "2025-09-17T19:20:00Z"
-    },
-    {
-      "id": "5161",
-      "title": "Meu mundo",
-      "description": "Levamos o conhecimento a todo o mundo atravez da tecnologia",
-      "coverImage": "blob:http://localhost:5173/c32bb2a0-229f-4134-ace6-79219ba2cb4d",
-      "profileImagemProject": "blob:http://localhost:5173/e88520c4-80e8-4b61-a011-a8cbeb2d5355",
-      "authorUserName": "cristian",
-      "createdAt": "13/11/2025, 11:21"
     }
   ]
 }

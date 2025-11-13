@@ -17,7 +17,7 @@ export function Routers() {
       <Route path='/home' element={<Home />} />
       <Route path='/profile' element={<Profile />} />
       <Route path='/create-project' element={<CreateProject />} />
-      <Route path='/project' element={<Project />} />
+      <Route path="/projeto/:id" element={<Project />} />
     </Routes>
   );
 }

@@ -82,11 +82,13 @@ export function Profile() {
             {projects.map(project => (
               <ProjectCard
                 key={project.id}
+                id={project.id}
                 name={project.title}
                 createDate={project.createdAt}
                 description={project.description}
                 img={project.profileImagemProject}
               />
+
             ))}
           </div>
         )}

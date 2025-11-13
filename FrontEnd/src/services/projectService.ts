@@ -48,3 +48,10 @@ export async function getAllProjects(): Promise<ProjectModel[]> {
 
   return await response.json();
 }
+
+
+export async function getProjectById(id: string) {
+  const response = await fetch(`http://localhost:3000/projetos/${id}`);
+  if (!response.ok) throw new Error("Erro ao buscar projeto");
+  return response.json();
+}
