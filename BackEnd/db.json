@@ -1,38 +1,84 @@
 {
   "usuarios": [
     {
-      "id": "fd9f",
-      "name": "Cristian",
-      "userName": "cristianbsoficial",
-      "email": "ra202413716@univassouras.edu.br",
-      "password": "12"
+      "id": 1,
+      "userName": "cristian",
+      "name": "Cristian Santos",
+      "email": "cristian@email.com",
+      "password": "123456",
+      "banner": "",
+      "profileImg": "",
+      "bio": "Sou apaixonado por tecnologia e inovação!",
+      "formation": "Engenheiro de Software pela Universidade Federal de Maricá"
     },
     {
-      "id": "e438",
-      "name": "Rhyan",
-      "userName": "RhyanBS2",
-      "email": "maraielianes247@gmail.com",
-      "password": "10"
+      "id": 2,
+      "userName": "beatriz",
+      "name": "Beatriz Souza",
+      "email": "beatriz@email.com",
+      "password": "abcdef",
+      "banner": "",
+      "profileImg": "",
+      "bio": "Desenvolvedora front-end focada em UX/UI.",
+      "formation": "Sistemas de Informação pela UFRJ"
+    },
+    {
+      "id": 3,
+      "userName": "diego",
+      "name": "Diego Oliveira",
+      "email": "diego@email.com",
+      "password": "qwerty",
+      "banner": "",
+      "profileImg": "",
+      "bio": "Curioso por IA e aprendizado de máquina.",
+      "formation": "Ciência da Computação pela UFF"
     }
   ],
   "projetos": [
     {
-      "id": "a443",
-      "title": "Capimar",
-      "description": "fusefu  hfohseof hsdoif sd hiodshfj iohfiodhd d ds",
-      "coverImage": "blob:http://localhost:5173/7610f45f-58d9-4184-8ea4-0281b3e63a78",
-      "profileImagemProject": "blob:http://localhost:5173/a8eca878-4c8d-451d-baa5-b13b4c951b3a",
-      "authorUserName": "cristianbsoficial",
-      "createdAt": "22/06/2025, 00:08"
+      "id": "1",
+      "title": "Plataforma de Estudos Online",
+      "description": "Um sistema para compartilhar cursos e materiais de aprendizado.",
+      "coverImage": "https://picsum.photos/600/300?random=1",
+      "profileImagemProject": "https://picsum.photos/150?random=11",
+      "authorUserName": "cristian",
+      "createdAt": "2025-09-21T10:00:00Z"
     },
     {
-      "id": "cd0c",
-      "title": "bdfdfb",
-      "description": "bdfbdfbfdbfd",
-      "coverImage": "blob:http://localhost:5174/213a16da-6d9d-4fa0-9e61-4b2cebe1d2dd",
-      "profileImagemProject": "blob:http://localhost:5174/78cb2ff6-bfb4-4093-8abf-7b7616d1e5b6",
-      "authorUserName": "RhyanBS2",
-      "createdAt": "22/06/2025, 00:43"
+      "id": "2",
+      "title": "Gestor de Tarefas Pessoais",
+      "description": "Aplicativo para organização de tarefas com tags e prioridades.",
+      "coverImage": "https://picsum.photos/600/300?random=2",
+      "profileImagemProject": "https://picsum.photos/150?random=12",
+      "authorUserName": "beatriz",
+      "createdAt": "2025-09-20T15:30:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Rede Social de Projetos",
+      "description": "Espaço para usuários compartilharem ideias e colaborarem.",
+      "coverImage": "https://picsum.photos/600/300?random=3",
+      "profileImagemProject": "https://picsum.photos/150?random=13",
+      "authorUserName": "diego",
+      "createdAt": "2025-09-19T12:00:00Z"
+    },
+    {
+      "id": "4",
+      "title": "App de Controle Financeiro",
+      "description": "Ferramenta para registrar despesas e gerar relatórios.",
+      "coverImage": "https://picsum.photos/600/300?random=4",
+      "profileImagemProject": "https://picsum.photos/150?random=14",
+      "authorUserName": "cristian",
+      "createdAt": "2025-09-18T08:45:00Z"
+    },
+    {
+      "id": "5",
+      "title": "Sistema de Feedback",
+      "description": "Plataforma para coletar e analisar feedback de usuários.",
+      "coverImage": "https://picsum.photos/600/300?random=5",
+      "profileImagemProject": "https://picsum.photos/150?random=15",
+      "authorUserName": "beatriz",
+      "createdAt": "2025-09-17T19:20:00Z"
     }
   ]
 }

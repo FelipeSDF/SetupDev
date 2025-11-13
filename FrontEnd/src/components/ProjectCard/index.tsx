@@ -6,7 +6,6 @@ type ProjectCardProps = {
   status?: string;
   createDate: string;
   img: string;
-  key: string | undefined;
 };
 
 export function ProjectCard({
@@ -14,20 +13,17 @@ export function ProjectCard({
   description,
   status,
   createDate,
-  img,
-  key
+  img
 }: ProjectCardProps) {
   return (
-    <ul className={styles.projectsContainer}>
-      <li key={key}>
-        <img src={img} alt='' />
-        <div className={styles.projectInfo}>
-          <h2 className={styles.projectName}>{name}</h2>
-          <p>{description}</p>
-          <h3>{status}</h3>
-          <h3>Data de criação: {createDate}</h3>
-        </div>
-      </li>
-    </ul>
+    <div className={styles.projectCard}>
+      <img src={img} alt={name} />
+      <div className={styles.projectInfo}>
+        <h2 className={styles.projectName}>{name}</h2>
+        <p>{description}</p>
+        {status && <h3>{status}</h3>}
+        <h3>Data de criação: {createDate}</h3>
+      </div>
+    </div>
   );
 }

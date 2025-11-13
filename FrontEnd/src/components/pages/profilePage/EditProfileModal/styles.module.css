@@ -1,0 +1,118 @@
+/* Fundo translúcido */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 50000;
+  padding-top: 8vh; /* espaço pra navbar */
+}
+
+/* Container do modal */
+.modalContainer {
+  background: #fff;
+  width: 40%;
+  min-width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Título */
+.modalContainer h2 {
+  font-size: 2rem;
+  color: #0B5A7C;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Inputs e labels */
+form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+  gap: 0.4rem;
+}
+
+form input,
+form textarea {
+  border: 1px solid #8b5a8b;
+  border-radius: 8px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #0B5A7C;
+  box-shadow: 0 0 6px rgba(11, 90, 124, 0.2);
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* Botões */
+.btnGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.btnGroup button {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btnGroup button:first-child {
+  background: #0B5A7C;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.btnGroup button:first-child:hover {
+  background: #09445c;
+}
+
+.btnGroup button:last-child {
+  background: #ccc;
+  color: #222;
+}
+
+.btnGroup button:last-child:hover {
+  background: #b8b8b8;
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .modalContainer {
+    width: 85%;
+    padding: 2rem;
+  }
+}

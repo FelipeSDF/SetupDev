@@ -1,65 +1,86 @@
-.form {
+.container {
   display: flex;
   justify-content: center;
-  align-items: center;
-
-  height: 100vh;
-
-  background-color: #0B5A7C;
-}
-
-.contentForm {
-  display: flex;
-  flex-direction: column;
-
-  border-radius: 1rem;
-  width: 80rem;
-  height: 50rem;
-
+  align-items: flex-start;
   padding: 2rem;
-  justify-content: center;
-  align-items: center;
 
-  background: #d3d3d3;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(13.5px);
-
-  border: 1px solid rgba(255, 255, 255, 0.18);
-
-  gap: 2rem;
 }
 
-.containerInputName,
-.containerInputDescription {
+.form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px; /* mesmo tamanho do modal do perfil */
+
+  
+  margin-top: 6rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.fieldGroup {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
-.containerFiles {
+.fileGrid {
   display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
 
-  width: 40rem;
+.fileBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-  align-items: center;
-  justify-content: center;
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .btnSubmit {
-  cursor: pointer;
-
-  width: 20rem;
-  height: 4rem;
-
-  background: #0B5A7C;
+  background-color: #2b6cb0;
   color: white;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(13.5px);
-
-  border: 1px solid rgba(255, 255, 255, 0.18);
-
-  transition: 0.4s ease-in-out;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.btnSubmit:hover{
-  opacity: 0.5;
+.btnSubmit:hover {
+  background-color: #2c5282;
+}
+
+.btnCancel {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btnCancel:hover {
+  background-color: #aaa;
 }

@@ -2,14 +2,12 @@ import { DefaultInput } from '../../components/DefaultInput';
 import { DefaultTextArea } from '../../components/DefaultTextArea';
 import { createProject } from '../../services/projectService';
 import { useAuth } from '../../contexts/useAuth';
-import styles from './styles.module.css';
 import { useNavigate } from 'react-router-dom';
-import { ExitePage } from '../../components/ExitePage';
 import { MainTemplate } from '../../templates/MainTemplate';
+import styles from './styles.module.css';
 
 export function CreateProject() {
   const { user } = useAuth();
-  console.log(user);
   const navigate = useNavigate();
 
   async function HandleSubmitProject(e: React.FormEvent<HTMLFormElement>) {
@@ -56,43 +54,54 @@ export function CreateProject() {
 
   return (
     <MainTemplate>
-      <form className={styles.form} onSubmit={HandleSubmitProject}>
-        <ExitePage page='/profile' />
-        <div className={styles.contentForm}>
-          <div className={styles.containerInputName}>
+      <section className={styles.container}>
+        <form className={styles.form} onSubmit={HandleSubmitProject}>
+          <h1 className={styles.title}>Criar novo projeto</h1>
+          <p className={styles.subtitle}>
+            Preencha as informações abaixo para cadastrar um novo projeto na plataforma Capmar.
+          </p>
+
+          <div className={styles.fieldGroup}>
             <DefaultInput
               labelText='Nome do projeto'
               name='projectName'
-              placeholder='Nome do projeto'
+              placeholder='Ex: Sistema de Gestão Comunitária'
             />
-          </div>
-          <div className={styles.containerInputDescription}>
             <DefaultTextArea
               labelText='Descrição do projeto'
               name='descriptionProject'
-              placeholderText='Descrição do projeto'
+              placeholderText='Descreva o propósito, público e objetivos do projeto...'
             />
           </div>
 
-          <div className={styles.containerFiles}>
-            <div>
-              <label>Foto de Perfil do projeto</label>
+          <div className={styles.fileGrid}>
+            <div className={styles.fileBox}>
+              <label>Foto de perfil do projeto</label>
               <input type='file' name='photoProfile' />
             </div>
-
-            <div>
+            <div className={styles.fileBox}>
               <label>Capa do projeto</label>
               <input type='file' name='coverProject' />
             </div>
           </div>
 
-          <DefaultInput
-            className={styles.btnSubmit}
-            type='submit'
-            value='Criar Projeto'
-          />
-        </div>
-      </form>
+          <div className={styles.buttonGroup}>
+            <button
+              type='submit'
+              className={styles.btnSubmit}
+            >
+              Criar Projeto
+            </button>
+            <button
+              type='button'
+              className={styles.btnCancel}
+              onClick={() => navigate('/profile')}
+            >
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </section>
     </MainTemplate>
   );
 }
